@@ -14,3 +14,11 @@
     refs.modal.classList.toggle("is-hidden");
   }
 })();
+
+console.dir(document.querySelector('.madal-input'));
+
+user = {
+  'user-name' : document.querySelector('.madal-input'),
+  'user-email' : 'dasdasd',
+  'user-tel' : 'daasdasd',
+};
