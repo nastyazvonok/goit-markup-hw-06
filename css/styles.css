@@ -7,6 +7,8 @@
   --title-text-color: #434455;
   --button-hover-focus: #404bbf;
   --bg-gradient: rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7);
+  --time-animation: cubic-bezier(0.4, 0, 0.2, 1);
+  --color-icon-client: #8e8f99;
 }
 body {
   background-color: var(--hero-text);
@@ -589,7 +591,7 @@ color: #FFFFFF;
   width: 100%;
   height: 100%;
   opacity: 1;
-  transition: opacity 250ms var(--time-animation);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   background-color: rgba(46, 47, 66, 0.4);
 }
@@ -609,7 +611,7 @@ color: #FFFFFF;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
-  transition: transform 250ms var(--time-animation);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   min-width: 408px;
   min-height: 584px;
@@ -621,7 +623,7 @@ color: #FFFFFF;
   border-radius: 4px;
 }
 
-.modal-close {
+.modal-close{
   position: absolute;
   top: 24px;
   right: 24px;
@@ -632,20 +634,15 @@ color: #FFFFFF;
   width: 24px;
   height: 24px;
 
-  color: var(--item-text-color);
-  background-color: var(--accent-color);
+  color: #2E2F42;
+  background-color: #E7E9FC;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   cursor: pointer;
 }
-
-.modal-close-icon {
-  fill: currentColor;
-}
-
-.modal-close:active {
-  color: var(--white);
-  background-color: var(--button-color-ocean);
+.modal-close:is(:focus , :hover){
+  fill: #ffffff;
+  background-color: #404bbf;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
@@ -660,7 +657,7 @@ color: #FFFFFF;
   line-height: 1.5;
   text-align: center;
   letter-spacing: 0.02em;
-  color: var(--item-text-color);
+  color: #2E2F42;
 
   margin-bottom: 16px;
 }
@@ -678,27 +675,28 @@ color: #FFFFFF;
   padding-left: 38px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
-  transition: border 250ms var(--time-animation);
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-input:focus {
-  border: 1px solid var(--logo-color-iris);
-}
-
-.modal-input:focus + .form-icon {
-  color: var(--logo-color-iris);
+  border: 1px solid #4d5ae5;
+  color: #4d5ae5;
 }
 
 .form-icon {
   position: absolute;
   left: 16px;
   bottom: 8px;
-
-  fill: currentColor;
-
-  transition: color 250ms var(--time-animation);
-  pointer-events: none;
+  fill: #2E2F42; 
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.form-icon:focus{
+  fill: #4D5AE5;
+}
+.form-icon:hover{
+  fill: #4D5AE5;
+}
+
 
 .modal-form textarea::placeholder {
   font-size: 12px;
@@ -749,6 +747,8 @@ textarea {
 .checkbox:checked + .icon-policy {
   background-color: #404bbf;
   border: 1px solid #404bbf;
+  fill:#F4F4FD;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-policy {
@@ -759,11 +759,12 @@ textarea {
   border-radius: 2px;
   width: 16px;
   height: 16px;
-  transition: background-color 250ms var(--time-animation),
-    border 250ms var(--time-animation);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    fill:none;
 }
 
-.policy-tex {
+.policy-text {
   margin-left: 8px;
   font-size: 12px;
   line-height: 1.17;
@@ -772,10 +773,11 @@ textarea {
 }
 
 .policy-link {
+  color:#4D5AE5;
   font-size: 12px;
   line-height: 1.33;
   letter-spacing: 0.04em;
-  color: var(--logo-color-iris);
+  color: #4d5ae5
 }
 
 .send-btn {
